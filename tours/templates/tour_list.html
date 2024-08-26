@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour List</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Available Tours</h1>
+        
+        {% if tours %}
+            <ul class="tour-list">
+                {% for tour in tours %}
+                    <li class="tour-item">
+                        <h2>{{ tour.name }}</h2>
+                        <p><strong>Location:</strong> {{ tour.location }}</p>
+                        <p><strong>Price:</strong> ${{ tour.price }}</p>
+                        <p><strong>Description:</strong> {{ tour.description }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No tours available at the moment. Please check back later.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
